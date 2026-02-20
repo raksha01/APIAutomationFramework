@@ -7,7 +7,7 @@ import com.api.models.responses.LoginResponse;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-public class GetProfileTest {
+public class GetProfileRequestTest {
 @Test
     public void getProfileInfoTest(){
         AuthService authservice = new AuthService();

@@ -2,7 +2,6 @@ package com.api.base;
 
 import static io.restassured.RestAssured.*;
 
-import com.api.models.requests.LoginRequest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -15,8 +14,8 @@ public class BaseService {
 
     }
 
-    protected void setToken(String token) {
-        requestSpecification.header();
+    protected void setAuthToken(String token) {
+        requestSpecification.header("Authorization", "Bearer "+token);
     }
 
     protected Response postRequest(Object payload, String endPoint)
