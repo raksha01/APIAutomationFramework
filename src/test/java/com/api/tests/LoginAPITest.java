@@ -14,6 +14,7 @@ public class LoginAPITest {
                         "  \"password\": \"string\"\n" +
                         "}").post("/api/auth/login");
         System.out.println(response.asPrettyString());
+        System.out.println(response.asPrettyString());
     }
 
 }
