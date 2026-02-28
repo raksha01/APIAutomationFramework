@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+    schedule:
+    - cron: 00 18 * * *
+     - cron: 00 3 * * *
+
 jobs:
   build:
 
@@ -21,3 +25,9 @@ jobs:
         cache: maven
     - name: Execute Testss
       run: mvn clean test -Dsuite=Suite -X
+
+    - name: Upload a Build Artifact
+    uses: actions/upload-artifact@v7.0.0
+    with:
+     name: Logs
+     path: logs/
