@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '0 18 * * *'
-    - cron: '0 3 * * *'
+    - cron: 0 18 * * *
+    - cron: 0 3 * * *
 
 jobs:
   build:
@@ -27,6 +27,7 @@ jobs:
         run: mvn clean test -Dsuite=Suite
 
       - name: Upload Logs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Logs
